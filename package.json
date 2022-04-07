@@ -1,0 +1,13 @@
+{
+  "name": "TripstaggerInfrastructure",
+  "version": "0.1.1",
+  "private": true,
+  "scripts": {
+    "release": "standard-version"
+  },
+  "devDependencies": {
+    "@compodoc/compodoc": "^1.1.15",
+    "conventional-changelog-cli": "^2.1.1",
+    "standard-version": "^9.1.0"
+  }
+}
