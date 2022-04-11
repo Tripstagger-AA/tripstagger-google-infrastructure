@@ -17,3 +17,8 @@ variable "project_name" {
   type    = string
   default = null
 }
+
+variable "docker_registry_service_name" {
+  type    = string
+  default = "dockerregistryadminservice"
+}
