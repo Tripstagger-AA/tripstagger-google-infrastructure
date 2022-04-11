@@ -1,3 +1,4 @@
+### Create registry and admin service account for the given registry
 resource "google_artifact_registry_repository" "docker" {
   location = var.region_in
   description = join(" ", [var.project_name_in, "Docker container registry"])
@@ -20,4 +21,35 @@ resource "google_artifact_registry_repository_iam_member" "docker_registry_admin
   repository = google_artifact_registry_repository.docker.name
   role   = "roles/artifactregistry.repoAdmin"
   member = "serviceAccount:${google_service_account.docker_registry_admin.email}"
+}
+
+# Create a service account impersonation
+resource "google_iam_workload_identity_pool" "github_pool" {
+  provider                  = google-beta
+
+  workload_identity_pool_id = "github-pool-${var.project_name_in}"
+}
+
+resource "google_iam_workload_identity_pool_provider" "github_provider" {
+  provider                           = google-beta
+  workload_identity_pool_id          = google_iam_workload_identity_pool.github_pool.workload_identity_pool_id
+  workload_identity_pool_provider_id = "github-provider-${var.project_name_in}"
+  display_name                       = "GitHub provider"
+  attribute_mapping = {
+    "google.subject"  = "assertion.sub"
+    "attribute.aud"   = "assertion.aud"
+    "attribute.actor" = "assertion.actor"
+  }
+  oidc {
+   # This is the only audience GitHub send today.
+    allowed_audiences = ["sigstore"]
+    issuer_uri        = "https://vstoken.actions.githubusercontent.com"
+  }
+}
+
+resource "google_service_account_iam_member" "pool_impersonation" {
+  provider           = google-beta
+  service_account_id = "projects/${var.project_name_in}/serviceAccounts/${google_service_account.docker_registry_admin.email}"
+  role               = "roles/iam.workloadIdentityUser"
+  member             = "principalSet://iam.googleapis.com/${google_iam_workload_identity_pool.github_pool.name}/*"
 }
