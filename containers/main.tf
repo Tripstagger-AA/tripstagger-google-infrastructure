@@ -27,6 +27,7 @@ resource "google_artifact_registry_repository_iam_member" "docker_registry_admin
 resource "google_iam_workload_identity_pool" "github_pool" {
   provider                  = google-beta
 
+  project                   = var.project_name_in
   workload_identity_pool_id = substr("github-pool-${var.project_name_in}", 0, 30)
 }
 
