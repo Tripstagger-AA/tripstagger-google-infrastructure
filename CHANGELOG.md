@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.4](https://github.com/Tripstagger-AA/tripstagger-google-infrastructure/compare/v0.1.3...v0.1.4) (2022-04-11)
+
+
+### Features
+
+* **containers:** Create GCR impersonation ([54e1376](https://github.com/Tripstagger-AA/tripstagger-google-infrastructure/commit/54e1376a076e0a176c1d9fc8af4351d14eb54e34))
+* **containers:** GCP docker registry admin service ([9308133](https://github.com/Tripstagger-AA/tripstagger-google-infrastructure/commit/93081332ffdd1e56136b2cf2a6df6929251ddfc9))
+
 ### [0.1.3](https://github.com/Tripstagger-AA/tripstagger-google-infrastructure/compare/v0.1.2...v0.1.3) (2022-04-11)
 
 
