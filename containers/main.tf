@@ -33,7 +33,7 @@ resource "google_iam_workload_identity_pool" "github_pool" {
 resource "google_iam_workload_identity_pool_provider" "github_provider" {
   provider                           = google-beta
   workload_identity_pool_id          = google_iam_workload_identity_pool.github_pool.workload_identity_pool_id
-  workload_identity_pool_provider_id = "github-provider-${var.project_name_in}"
+  workload_identity_pool_provider_id = substr("github-provider-${var.project_name_in}", 0, 32)
   display_name                       = "GitHub provider"
   attribute_mapping = {
     "google.subject"  = "assertion.sub"
