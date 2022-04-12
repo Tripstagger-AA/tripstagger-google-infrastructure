@@ -20,5 +20,18 @@ variable "project_name" {
 
 variable "docker_registry_service_name" {
   type    = string
-  default = "dockerregistryadminservice"
+}
+
+variable "pool_id" {
+  type    = string
+}
+
+variable "provider_id" {
+  type    = string
+}
+
+variable "allowed_audiences" {
+  type        = list(string)
+  description = "Workload Identity Pool Provider allowed audiences."
+  default     = [ ]
 }
