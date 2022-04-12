@@ -10,3 +10,17 @@ module "containers" {
     google-beta = google-beta
   }
 }
+
+module "orchestration" {
+  source          = "./orchestration"
+  cluster_name_in = var.gke_cluster_name
+  region_in       = var.region
+  project_name_in = local.project_name
+  env_name_in     = "test"
+  regional_in     = false
+  zones_in        = local.zones
+
+  providers = {
+    google = google
+  }
+}

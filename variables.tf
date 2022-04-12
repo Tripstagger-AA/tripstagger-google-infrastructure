@@ -19,19 +19,23 @@ variable "project_name" {
 }
 
 variable "docker_registry_service_name" {
-  type    = string
+  type = string
 }
 
 variable "pool_id" {
-  type    = string
+  type = string
 }
 
 variable "provider_id" {
-  type    = string
+  type = string
 }
 
 variable "allowed_audiences" {
   type        = list(string)
   description = "Workload Identity Pool Provider allowed audiences."
-  default     = [ ]
+  default     = []
+}
+
+variable "gke_cluster_name" {
+  description = "The name for the GKE cluster"
 }
