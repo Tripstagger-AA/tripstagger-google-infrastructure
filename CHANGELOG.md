@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.6](https://github.com/Tripstagger-AA/tripstagger-google-infrastructure/compare/v0.1.5...v0.1.6) (2022-04-13)
+
+
+### Features
+
+* **Orchestration:** Add outputs ([e5572af](https://github.com/Tripstagger-AA/tripstagger-google-infrastructure/commit/e5572af71986466cf2e16075da9783689c23c3b1))
+* **Orchestration:** GKE engine ([9085a8e](https://github.com/Tripstagger-AA/tripstagger-google-infrastructure/commit/9085a8e18093558859c160e99f7615b77203e2a0))
+* **Orchestration:** Spot nodes ([8326f81](https://github.com/Tripstagger-AA/tripstagger-google-infrastructure/commit/8326f81ed6550c61f16afa20e908834b7f6570e5))
+
 ### [0.1.5](https://github.com/Tripstagger-AA/tripstagger-google-infrastructure/compare/v0.1.4...v0.1.5) (2022-04-12)
 
 
