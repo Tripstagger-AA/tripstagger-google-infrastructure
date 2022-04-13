@@ -24,7 +24,7 @@ module "gcp-network" {
 }
 
 data "google_compute_subnetwork" "subnetwork" {
-  name       = var.subnetwork_name_in
+  name       = "${var.subnetwork_name_in}-${var.env_name_in}"
   project    = var.project_name_in
   region     = var.region_in
   depends_on = [module.gcp-network]
