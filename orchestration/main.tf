@@ -65,10 +65,10 @@ module "gke" {
       disk_size_gb          = 30
       local_ssd_count       = 0
       tags                  = "gke-node"
-      min_count             = 1
-      max_count             = 1
-      max_surge             = 2
-      max_unavailable       = 1
+      min_count             = var.min_count_in
+      max_count             = var.max_count_in
+      max_surge             = var.max_surge_in
+      max_unavailable       = var.max_unavailable_in
       autoscaling           = true
       auto_upgrade          = true
       auto_repair           = true

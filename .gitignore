@@ -34,3 +34,5 @@ terraform.rc
 
 node_modules
 gcp-keys.json
+
+terraform.auto.tfvars

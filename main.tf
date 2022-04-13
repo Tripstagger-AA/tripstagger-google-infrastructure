@@ -12,13 +12,17 @@ module "containers" {
 }
 
 module "orchestration" {
-  source          = "./orchestration"
-  cluster_name_in = var.gke_cluster_name
-  region_in       = var.region
-  project_name_in = local.project_name
-  env_name_in     = "test"
-  regional_in     = false
-  zones_in        = local.zones
+  source             = "./orchestration"
+  cluster_name_in    = var.gke_cluster_name
+  region_in          = var.region
+  project_name_in    = local.project_name
+  env_name_in        = "test"
+  regional_in        = false
+  zones_in           = local.zones
+  min_count_in       = var.gke_min_count
+  max_count_in       = var.gke_max_count
+  max_surge_in       = var.gke_max_surge
+  max_unavailable_in = var.gke_max_unavailable
 
   providers = {
     google = google

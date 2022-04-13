@@ -39,3 +39,23 @@ variable "allowed_audiences" {
 variable "gke_cluster_name" {
   description = "The name for the GKE cluster"
 }
+
+variable "gke_min_count" {
+  type    = number
+  default = 1
+}
+
+variable "gke_max_count" {
+  type    = number
+  default = 1
+}
+
+variable "gke_max_surge" {
+  type    = number
+  default = 2
+}
+
+variable "gke_max_unavailable" {
+  type    = number
+  default = 1
+}

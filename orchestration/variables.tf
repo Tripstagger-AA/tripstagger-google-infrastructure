@@ -58,3 +58,19 @@ variable "services_ipv4_cidr_range_in" {
   description = "The cidr ip range to use for services"
   default     = "10.28.0.0/20"
 }
+
+variable "min_count_in" {
+  type = number
+}
+
+variable "max_count_in" {
+  type = number
+}
+
+variable "max_surge_in" {
+  type = number
+}
+
+variable "max_unavailable_in" {
+  type = number
+}
