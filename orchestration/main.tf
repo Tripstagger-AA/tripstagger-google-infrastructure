@@ -1,3 +1,4 @@
+data "google_client_config" "default" {}
 module "gcp-network" {
   source       = "terraform-google-modules/network/google"
   project_id   = var.project_name_in
