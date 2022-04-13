@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.7](https://github.com/Tripstagger-AA/tripstagger-google-infrastructure/compare/v0.1.6...v0.1.7) (2022-04-13)
+
+
+### Features
+
+* **Orchestration:** Push variables to control scaling ([99f190a](https://github.com/Tripstagger-AA/tripstagger-google-infrastructure/commit/99f190a198b1cd4d32eeab0e0254f7407bfda854))
+
 ### [0.1.6](https://github.com/Tripstagger-AA/tripstagger-google-infrastructure/compare/v0.1.5...v0.1.6) (2022-04-13)
 
 
