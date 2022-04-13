@@ -71,7 +71,7 @@ module "gke" {
       autoscaling           = true
       auto_upgrade          = true
       auto_repair           = true
-      node_metadata         = "GKE_METADATA_SERVER"
+      node_metadata         = "GKE_METADATA"
     },
   ]
 
