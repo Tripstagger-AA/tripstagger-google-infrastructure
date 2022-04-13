@@ -104,16 +104,6 @@ module "gke" {
     ]
   }
 
-    node_pools_oauth_scopes = {
-    all = []
-
-    regional-pool = [
-      "https://www.googleapis.com/auth/cloud-platform",
-      "https://www.googleapis.com/auth/ndev.clouddns.readwrite",
-      "https://www.googleapis.com/auth/servicecontrol",
-      "https://www.googleapis.com/auth/service.management.readonly",
-    ]
-  }
     master_authorized_networks = [
     {
       cidr_block   = data.google_compute_subnetwork.subnetwork.ip_cidr_range
