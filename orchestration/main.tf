@@ -74,9 +74,9 @@ module "gcp-network" {
   node_pools = [
     {
       name            = "zonal-pool"
+      machine_type          = "e2-standard-2"
       min_count       = var.min_count_in
       max_count       = var.max_count_in
-      image_type            = "UBUNTU"
       tags            = "gke-node"
       auto_upgrade    = true
       auto_repair           = true
