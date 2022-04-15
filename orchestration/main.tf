@@ -9,7 +9,6 @@ provider "kubernetes" {
 
 module "gcp-network" {
   source  = "terraform-google-modules/network/google"
-  version = ">= 4.0.1, < 5.0.0"
 
   project_id   = var.project_name_in
   network_name = local.network_name
@@ -35,6 +34,7 @@ module "gcp-network" {
       },
     ]
   }
+}
 
   data "google_compute_subnetwork" "subnetwork" {
   name       = local.subnetwork_name
@@ -69,7 +69,7 @@ module "gcp-network" {
         display_name = "VPC"
       },
     ]
-  }
+
 
   node_pools = [
     {
@@ -91,7 +91,9 @@ module "gcp-network" {
 
     node_pools_metadata = {
     all = {}
-    zonal-pool = {}
+    zonal-pool = {
+       shutdown-script = file("${path.module}/data/shutdown-script.sh")
+    }
   }
 
   node_pools_labels = {
