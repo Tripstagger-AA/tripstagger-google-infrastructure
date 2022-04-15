@@ -74,3 +74,7 @@ variable "max_surge_in" {
 variable "max_unavailable_in" {
   type = number
 }
+
+variable "enable_autoscaling_in" {
+  type    = bool
+}

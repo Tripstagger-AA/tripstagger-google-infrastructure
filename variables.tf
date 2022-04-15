@@ -47,15 +47,25 @@ variable "gke_min_count" {
 
 variable "gke_max_count" {
   type    = number
-  default = 1
+  default = 2
 }
 
 variable "gke_max_surge" {
   type    = number
-  default = 2
+  default = 3
 }
 
 variable "gke_max_unavailable" {
   type    = number
   default = 1
+}
+
+variable "gke_enable_autoscaling" {
+  type    = bool
+  default = true
+}
+
+variable "gke_regional" {
+  type    = bool
+  default = false
 }

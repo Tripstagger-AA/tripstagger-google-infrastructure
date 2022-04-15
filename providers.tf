@@ -9,6 +9,10 @@ terraform {
       source  = "hashicorp/google-beta"
       version = "~> 4.16.0"
     }
+
+    local = {
+      source = "hashicorp/local"
+    }
   }
 }
 
@@ -23,4 +27,7 @@ provider "google-beta" {
   region  = var.region
   project = local.project_name
   zone    = var.zone
+}
+
+provider "local" {
 }
