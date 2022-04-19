@@ -1,23 +1,23 @@
-variable "region_in" {
+variable "region" {
   type    = string
 }
 
-variable "project_name_in" {
+variable "project_name" {
   type    = string
 }
 
-variable "docker_registry_service_name_in" {
+variable "docker_registry_service_name" {
   type    = string
 }
 
-variable "pool_id_in" {
+variable "pool_id" {
   type    = string
 }
 
-variable "provider_id_in" {
+variable "provider_id" {
   type    = string
 }
 
-variable "allowed_audiences_in" {
+variable "allowed_audiences" {
   type        = list(string)
 }

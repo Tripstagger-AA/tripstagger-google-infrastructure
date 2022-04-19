@@ -10,14 +10,14 @@ provider "kubernetes" {
 module "gcp-network" {
   source  = "terraform-google-modules/network/google"
 
-  project_id   = var.project_name_in
+  project_id   = var.project_name
   network_name = local.network_name
 
   subnets = [
     {
       subnet_name           = local.subnetwork_name
       subnet_ip             = "10.0.0.0/17"
-      subnet_region         = var.region_in
+      subnet_region         = var.region
       subnet_private_access = "true"
     },
   ]
@@ -38,17 +38,17 @@ module "gcp-network" {
 
   data "google_compute_subnetwork" "subnetwork" {
   name       = local.subnetwork_name
-  project    = var.project_name_in
-  region     = var.region_in
+  project    = var.project_name
+  region     = var.region
   depends_on = [module.gcp-network]
   }
 
   module "gke" {
     source     = "terraform-google-modules/kubernetes-engine/google//modules/private-cluster"
-    project_id = var.project_name_in
+    project_id = var.project_name
     name       = local.cluster_name
     regional   = var.regional_in
-    region     = var.region_in
+    region     = var.region
     zones      = var.zones_in
 
     network                 = module.gcp-network.network_name
@@ -108,7 +108,7 @@ module "gcp-network" {
     all = []
 
     zonal-pool = [
-     "gke-node", "${var.project_name_in}-gke"
+     "gke-node", "${var.project_name}-gke"
     ]
   }
 }

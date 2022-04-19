@@ -1,8 +1,8 @@
-variable "region_in" {
+variable "region" {
   type    = string
 }
 
-variable "project_name_in" {
+variable "project_name" {
   type    = string
 }
 
