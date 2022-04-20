@@ -64,7 +64,7 @@ variable "gke_ip_address_name" {
 
 variable "gke_https" {
   type    = bool
-  default = true
+  default = false
 }
 
 variable "gke_num_nodes" {
