@@ -54,12 +54,12 @@ variable "gke_disk_size" {
 
 variable "gke_network_name" {
   type    = string
-  default = "gke_network"
+  default = "gke-network"
 }
 
 variable "gke_ip_address_name" {
   type    = string
-  default = "gke_ip_address"
+  default = "gke-ip-address"
 }
 
 variable "gke_https" {
