@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.8](https://github.com/Tripstagger-AA/tripstagger-google-infrastructure/compare/v0.1.7...v0.1.8) (2022-04-20)
+
+
+### Features
+
+* **Cluster:** Cheap gke configuration ([d89eab7](https://github.com/Tripstagger-AA/tripstagger-google-infrastructure/commit/d89eab7b799c356608b95264ee04beb52f99c242))
+* **Cluster:** Install gloo with the terraform provider ([1b66c55](https://github.com/Tripstagger-AA/tripstagger-google-infrastructure/commit/1b66c5561e762c872f5e25bd9ef45da473470fc1))
+* **Cluster:** Setup helm provider to install gloo ([c7e459b](https://github.com/Tripstagger-AA/tripstagger-google-infrastructure/commit/c7e459b3055ee1f8cc3b99a79d9ec0ce78cfbd73))
+* **Orchestration:** New setup based on the documentation ([9cd6583](https://github.com/Tripstagger-AA/tripstagger-google-infrastructure/commit/9cd65830729d589c6f8fdfb3cdf5cedb9e1c65f1))
+
 ### [0.1.7](https://github.com/Tripstagger-AA/tripstagger-google-infrastructure/compare/v0.1.6...v0.1.7) (2022-04-13)
 
 
