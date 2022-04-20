@@ -88,3 +88,13 @@ variable "gke_ssl_cert_key" {
 variable "gke_ssl_cert_name" {
   type = string
 }
+
+variable "helm_account_name" {
+  type    = string
+  default = "gke-helm-service-gloo"
+}
+
+variable "helm_version" {
+  type    = string
+  default = "v2.13.1"
+}

@@ -56,3 +56,11 @@ variable "num_nodes" {
 variable "max_num_nodes" {
   type = number
 }
+
+variable "helm_account_name" {
+  type = string
+}
+
+variable "helm_version" {
+  type = string
+}
