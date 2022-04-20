@@ -36,3 +36,6 @@ node_modules
 gcp-keys.json
 
 terraform.auto.tfvars
+
+docs
+.idea
