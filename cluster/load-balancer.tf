@@ -5,6 +5,15 @@
 
 # Subnet reserved for Regional External HTTP Load Balancers that use a managed Envoy proxy.
 # More information is available here: https://cloud.google.com/load-balancing/docs/https/proxy-only-subnets
+
+resource "null_resource" "gloo" {
+  depends_on = [null_resource.local_k8s_context]
+  provisioner "local-exec" {
+    # Update your local gcloud and kubectl credentials for the newly created cluster
+    command = "./scripts/install-gloo.sh"
+  }
+}
+
 resource "google_compute_subnetwork" "proxy" {
   depends_on = [google_compute_network.default]
   provider = google-beta

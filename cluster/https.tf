@@ -1,6 +1,3 @@
-rovider "random" {
-  # Configuration options
-}
 resource "google_compute_forwarding_rule" "redirect" {
   depends_on = [google_compute_subnetwork.proxy]
   count      = var.https ? 1 : 0
@@ -63,8 +60,8 @@ resource "google_compute_region_ssl_certificate" "default" {
   region  = google_compute_subnetwork.default.region
   name        = "${var.ssl_cert_name}-${random_string.random_cert_suffix.result}"
   description = "SSL certificate for l7-xlb-proxy-https"
-  private_key = file("${var.ssl_cert_path}/${var.ssl_cert_name}.key")
-  certificate = file("${var.ssl_cert_path}/${var.ssl_cert_name}.crt")
+  private_key = var.ssl_cert_key
+  certificate = var.ssl_cert_crt
 
   lifecycle {
     create_before_destroy = true

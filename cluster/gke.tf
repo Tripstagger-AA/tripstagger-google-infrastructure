@@ -1,10 +1,3 @@
-provider "google-beta" {
-  # Run 'gcloud auth application-default login' to get credentials.json
-  # credentials = "${file("credentials.json")}"
-  project     = var.project_name
-  region      = var.region
-}
-
 resource "google_compute_subnetwork" "default" {
   depends_on    = [google_compute_network.default]
   name          = "${var.cluster_name}-subnet"
@@ -21,6 +14,7 @@ resource "google_container_node_pool" "primary_pool" {
   project    = google_compute_network.default.project
   location   = var.zone
   node_count = var.num_nodes
+  provider  = google-beta
 
   autoscaling {
     min_node_count = var.num_nodes
