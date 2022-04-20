@@ -38,34 +38,53 @@ variable "allowed_audiences" {
 
 variable "gke_cluster_name" {
   description = "The name for the GKE cluster"
+  type        = string
 }
 
-variable "gke_min_count" {
+variable "gke_machine_type" {
+  description = "The region to host the cluster in"
+  type        = string
+  default     = "e2-standard-2"
+}
+
+variable "gke_disk_size" {
   type    = number
-  default = 1
+  default = 20
 }
 
-variable "gke_max_count" {
-  type    = number
-  default = 2
+variable "gke_network_name" {
+  type    = string
+  default = "gke_network"
 }
 
-variable "gke_max_surge" {
+variable "gke_ip_address_name" {
+  type    = string
+  default = "gke_ip_address"
+}
+
+variable "gke_https" {
+  type    = bool
+  default = false
+}
+
+variable "gke_num_nodes" {
   type    = number
   default = 3
 }
 
-variable "gke_max_unavailable" {
+variable "gke_max_num_nodes" {
   type    = number
-  default = 1
+  default = 5
 }
 
-variable "gke_enable_autoscaling" {
-  type    = bool
-  default = true
+variable "gke_ssl_cert_crt" {
+  type = string
 }
 
-variable "gke_regional" {
-  type    = bool
-  default = false
+variable "gke_ssl_cert_key" {
+  type = string
+}
+
+variable "gke_ssl_cert_name" {
+  type = string
 }

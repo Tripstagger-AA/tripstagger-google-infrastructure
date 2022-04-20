@@ -5,8 +5,9 @@ terraform {
       version = "~> 4.16.0"
     }
 
-    local = {
-      source = "hashicorp/local"
+     google-beta = {
+      source  = "hashicorp/google-beta"
+      version = "~> 4.16.0"
     }
   }
 }

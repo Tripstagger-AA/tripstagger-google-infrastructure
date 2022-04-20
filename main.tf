@@ -1,5 +1,5 @@
 module "containers" {
-  source                          = "./containers"
+  source                       = "./containers"
   project_name                 = local.project_name
   region                       = var.region
   docker_registry_service_name = var.docker_registry_service_name
