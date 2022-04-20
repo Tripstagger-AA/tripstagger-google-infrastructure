@@ -3,7 +3,9 @@
   "version": "0.1.8",
   "private": true,
   "scripts": {
-    "release": "standard-version && git push --tags && git push"
+    "release@patch": "standard-version --release-as patch && git push --tags && git push",
+    "release@minor": "standard-version --release-as minor && git push --tags && git push",
+    "release@major": "standard-version --release-as major && git push --tags && git push"
   },
   "devDependencies": {
     "@compodoc/compodoc": "^1.1.15",
