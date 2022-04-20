@@ -5,4 +5,4 @@ Terraform configuration for the microservices environment hosted in the Google
 
 
 Permissions added to the GCP service running terraform 
-![Service permissions](./docs/service permissions.png)
+![Service permissions](https://raw.githubusercontent.com/Tripstagger-AA/tripstagger-google-infrastructure/main/docs/service%20permissions.png)
