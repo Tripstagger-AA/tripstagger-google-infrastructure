@@ -17,20 +17,6 @@ resource "kubernetes_service_account" "main" {
   }
 }
 
-module "annotate-sa" {
-  source  = "terraform-google-modules/gcloud/google//modules/kubectl-wrapper"
-  version = "~> 3.1"
-
-  skip_download               = true
-  cluster_name                = var.cluster_name
-  cluster_location            = var.region
-  project_id                  = var.project_name
-
-  kubectl_create_command  = "kubectl annotate --overwrite sa -n ${var.impersonation_namespace} ${local.gcp_service_name} iam.gke.io/gcp-service-account=${google_service_account.cluster_service_account.email}"
-  kubectl_destroy_command = "kubectl annotate sa -n ${var.impersonation_namespace} ${local.gcp_service_name} iam.gke.io/gcp-service-account-"
-}
-
-
 module "gh_oidc" {
   source      = "terraform-google-modules/github-actions-runners/google//modules/gh-oidc"
   project_id  = var.project_name
