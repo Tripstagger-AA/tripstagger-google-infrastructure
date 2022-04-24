@@ -20,3 +20,7 @@ output "kubernetes_service" {
   description = "Email address for the gke registry service"
   value       = module.cluster.kubernetes_service
 }
+
+output "gke_cluster_endpoint" {
+  value = module.cluster.cluster_endpoint
+}
