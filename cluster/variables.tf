@@ -64,3 +64,19 @@ variable "helm_account_name" {
 variable "helm_version" {
   type = string
 }
+
+variable "pool_id" {
+  type    = string
+}
+
+variable "provider_id" {
+  type    = string
+}
+
+variable "allowed_audiences" {
+  type        = list(string)
+}
+
+variable "impersonation_namespace" {
+  type = string
+}

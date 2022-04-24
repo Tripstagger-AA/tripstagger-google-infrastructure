@@ -36,6 +36,10 @@ variable "allowed_audiences" {
   default     = []
 }
 
+variable "gke_impersionation_provider_id" {
+  type = string
+}
+
 variable "gke_cluster_name" {
   description = "The name for the GKE cluster"
   type        = string
@@ -97,4 +101,9 @@ variable "helm_account_name" {
 variable "helm_version" {
   type    = string
   default = "v2.13.1"
+}
+
+variable "gke_impersonation_namespace" {
+  type    = string
+  default = "tripstagger"
 }
