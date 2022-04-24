@@ -16,7 +16,7 @@ output "gke_workload_identity_pool_provider_id" {
   value = module.cluster.workload_identity_pool_provider_id
 }
 
-output "kubernetes_service" {
+output "gke_kubernetes_service" {
   description = "Email address for the gke registry service"
   value       = module.cluster.kubernetes_service
 }
