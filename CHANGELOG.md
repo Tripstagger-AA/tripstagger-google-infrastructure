@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/Tripstagger-AA/tripstagger-google-infrastructure/compare/v0.1.10...v0.2.0) (2022-04-24)
+
+
+### Features
+
+* **Containers:** Show docker registry service email ([68debb0](https://github.com/Tripstagger-AA/tripstagger-google-infrastructure/commit/68debb0c301a32ed2e2a761e418fcc0878261bc7))
+
 ### [0.1.10](https://github.com/Tripstagger-AA/tripstagger-google-infrastructure/compare/v0.1.8...v0.1.10) (2022-04-20)
 
 ### [0.1.9](https://github.com/Tripstagger-AA/tripstagger-google-infrastructure/compare/v0.1.8...v0.1.9) (2022-04-20)
