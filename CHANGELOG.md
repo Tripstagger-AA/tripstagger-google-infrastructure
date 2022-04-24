@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.1](https://github.com/Tripstagger-AA/tripstagger-google-infrastructure/compare/v0.2.0...v0.2.1) (2022-04-24)
+
+
+### Features
+
+* **Cluster:** Create namespace for the impersonation ([9135350](https://github.com/Tripstagger-AA/tripstagger-google-infrastructure/commit/91353506c51cb47c737512529b3b31643d1f060b))
+* **Cluster:** Workflow identity setup ([1740775](https://github.com/Tripstagger-AA/tripstagger-google-infrastructure/commit/174077500c62c2845abbc4195579d2712e70d712))
+
 ## [0.2.0](https://github.com/Tripstagger-AA/tripstagger-google-infrastructure/compare/v0.1.10...v0.2.0) (2022-04-24)
 
 
