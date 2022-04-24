@@ -7,7 +7,7 @@ resource "google_service_account" "cluster_service_account" {
 }
 
 resource "kubernetes_service_account" "main" {
-  depends_on = [time_sleep.wait_for_kube]
+  depends_on = [kubernetes_namespace.apps]
   metadata {
     name      = local.gcp_service_name
     namespace = var.impersonation_namespace
