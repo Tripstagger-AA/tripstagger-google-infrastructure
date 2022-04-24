@@ -36,6 +36,10 @@ variable "allowed_audiences" {
   default     = []
 }
 
+variable "gke_impersionation_pool_id" {
+  type = string
+}
+
 variable "gke_impersionation_provider_id" {
   type = string
 }

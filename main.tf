@@ -29,7 +29,7 @@ module "cluster" {
   ssl_cert_crt            = var.gke_ssl_cert_crt
   helm_account_name       = var.helm_account_name
   helm_version            = var.helm_version
-  pool_id                 = var.pool_id
+  pool_id                 = var.gke_impersionation_pool_id
   provider_id             = var.gke_impersionation_provider_id
   allowed_audiences       = var.allowed_audiences
   impersonation_namespace = var.gke_impersonation_namespace
