@@ -105,11 +105,3 @@ resource "null_resource" "local_k8s_context" {
     command = "for i in 1 2 3 4 5; do gcloud container clusters get-credentials ${var.cluster_name} --project=${var.project_name} --zone=${var.zone} && break || sleep 60; done"
   }
 }
-
-resource "kubernetes_namespace" "apps" {
-
-  depends_on = [time_sleep.wait_for_kube]
-  metadata {
-    name = var.impersonation_namespace
-  }
-}

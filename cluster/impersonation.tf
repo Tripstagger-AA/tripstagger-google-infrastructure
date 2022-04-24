@@ -1,3 +1,21 @@
+provider "kubernetes" {
+    host                   = "${google_container_cluster.default.endpoint}"
+    token                  = "${data.google_client_config.current.access_token}"
+
+    client_certificate     = "${base64decode(google_container_cluster.default.master_auth.0.client_certificate)}"
+    client_key             = "${base64decode(google_container_cluster.default.master_auth.0.client_key)}"
+    cluster_ca_certificate = "${base64decode(google_container_cluster.default.master_auth.0.cluster_ca_certificate)}"
+}
+
+
+resource "kubernetes_namespace" "apps" {
+
+  depends_on = [time_sleep.wait_for_kube]
+  metadata {
+    name = var.impersonation_namespace
+  }
+}
+
 resource "google_service_account" "cluster_service_account" {
   provider = google-beta
 
