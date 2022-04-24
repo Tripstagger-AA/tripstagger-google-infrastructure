@@ -24,6 +24,14 @@ resource "google_service_account" "cluster_service_account" {
   project    = var.project_name
 }
 
+resource "google_project_iam_member" "gke_registry_developer_iam" {
+  provider = google-beta
+  project = var.project_name
+
+  role   = "roles/container.developer"
+  member = "serviceAccount:${google_service_account.cluster_service_account.email}"
+}
+
 resource "kubernetes_service_account" "main" {
   depends_on = [kubernetes_namespace.apps]
   metadata {
