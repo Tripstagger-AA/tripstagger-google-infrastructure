@@ -24,3 +24,7 @@ output "gke_kubernetes_service" {
 output "gke_cluster_endpoint" {
   value = module.cluster.cluster_endpoint
 }
+
+output "gke_load_balancer_address" {
+  value = module.cluster.load_balancer_address
+}
